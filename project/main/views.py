@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .models import Brand, Car
 
 def home(request):
@@ -8,5 +8,4 @@ def home(request):
     })
 
 def car_detail(request, car_id):
-    car = get_object_or_404(Car, id=car_id)
     return render(request, 'main/detail.html', {'car': car})
